@@ -1,7 +1,12 @@
-#include "header.p4"
+/*
+* Parse all possible header fields.
+*/
+
+#define ETH_TYPE_IPv4 0x0800
+#define IP_PROTO_TCP 6
 
 parser start {
-    set_metadata(security_metadata.packet_category, INCOMPLETE_PACKET);
+    set_metadata(meta.packet_category, UNKNOWN_PACKET);
     return parse_ethernet;
 }
 

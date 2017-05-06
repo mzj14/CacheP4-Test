@@ -1,11 +1,9 @@
-#include "common_action.p4"
-#include "header.p4"
 /**
 * Permit or deny packets according to header fields
 */
 
 action acl_mark() {
-   modify_field(security_metadata.packet_category, UNWANTED_PACKET);
+   modify_field(meta.packet_category, DENIED_PACKET);
 }
 
 table ipv4_tcp_acl {

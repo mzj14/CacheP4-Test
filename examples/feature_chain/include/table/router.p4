@@ -1,4 +1,6 @@
-#include "header.p4"
+/*
+* Forward a packet in the 3rd layer
+*/
 
 action set_nhop(nhop_ipv4, port) {
     modify_field(meta.nhop_ipv4, nhop_ipv4);
@@ -12,13 +14,13 @@ table ipv4_lpm {
     }
     actions {
         set_nhop;
-        _drop;
     }
     size: 1024;
 }
 
 action set_dmac(dmac) {
-    modify_field(ethernet.dstAddr, dmac);
+    modify_field(ethernet.dst_addr, dmac);
+    modify_field(meta.packet_category, FORWARD_PACKET);
 }
 
 table forward {
@@ -27,41 +29,35 @@ table forward {
     }
     actions {
         set_dmac;
-        _drop;
     }
     size: 512;
 }
 
-
-action rewrite_smac(smac) {
-    modify_field(ethernet.src_addr, smac)
+action handle_forward(smac) {
+    modify_field(ethernet.src_addr, smac);
 }
 
-action handle_normal(smac) {
-    rewrite_smac(smac);
-}
-
-action handle_faked() {
+action handle_fake() {
     drop();
 }
 
-action handle_normal() {
+action handle_denied() {
     drop();
 }
 
-action handle_alert() {
+action handle_unknown() {
     drop();
 }
 
 table send_frame {
     reads {
-        security_metadata.packet_category : exact;
-        standard_metadata.egress_port : exact;
+        meta.packet_category : exact;
+        standard_metadata.egress_spec : ternary;
     }
     actions {
-        handle_normal;
-        handle_faked;
-        handle_unwanted;
-        handle_alert;
+        handle_forward;
+        handle_fake;
+        handle_denied;
+        handle_unknown;
     }
 }

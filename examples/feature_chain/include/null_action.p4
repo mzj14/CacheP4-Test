@@ -1,7 +1,7 @@
-action _drop {
-    drop();
-}
+/*
+* Wrap no_op action for table common use.
+*/
 
-action nop {
+action nop() {
     no_op();
 }

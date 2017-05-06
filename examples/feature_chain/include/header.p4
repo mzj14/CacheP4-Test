@@ -54,17 +54,18 @@ header_type tcp_t {
 header tcp_t tcp;
 
 /**
-* Security metadata type
+* metadata type
 */
-
-#define NORMAL_PACKET 0 // packet that correctly forwarded according to NAT
+#define FORWARD_PACKET 0 // packet that correctly forwarded according to NAT
 #define FAKE_PACKET 1 // packet whose mac address is not corresponding to the ip address
 #define DENIED_PACKET 2 // packet that is real but should not be processed by the switch
+#define UNKNOWN_PACKET 3 // packet that has not been categorized
 
-header_type security_metadata_t {
+header_type meta_t {
     fields {
-        packet_category : 2;
+        packet_category : 8; // identify packet category
+        nhop_ipv4 : 32; // IP address for the next hop
     }
 }
 
-header security_metadata_t security_metadata;
+header meta_t meta;
