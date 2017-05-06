@@ -1,3 +1,2 @@
 #! /bin/bash
-
-p4c-bmv2 main.p4 --json config.json
+p4c-bmv2 feature_chain.p4 --json config.json
