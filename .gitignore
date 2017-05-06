@@ -1,6 +1,6 @@
 *.json
 *.txt
-mask.py
-test.py
-test_commands
+*.xml
+test*
 graph/
+data/
