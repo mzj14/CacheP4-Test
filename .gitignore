@@ -2,3 +2,5 @@
 *.txt
 mask.py
 test.py
+test_commands
+graph/
