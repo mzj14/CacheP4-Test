@@ -170,9 +170,6 @@ action nop() {
      no_op();
 }
 
-action _drop() {
-    drop();
-}
 
 /*
 * Check the consistency between MAC address and ip address
