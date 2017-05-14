@@ -323,11 +323,10 @@ action compound_action_ext_to_int(ipv4_addr, mac_addr, is_ext, dstAddr, nhop_ipv
 
 table compound_table{
     reads {
-        ipv4 : valid;
-        tcp : valid;
+        standard_metadata.ingress_port : exact;
         ipv4.srcAddr : ternary;
         ipv4.dstAddr : ternary;
-        // ipv4.ttl : ternary;
+        ipv4.ttl : range;
         tcp.srcPort : ternary;
         tcp.dstPort : ternary;
     }
