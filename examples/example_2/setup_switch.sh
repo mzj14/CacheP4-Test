@@ -2,10 +2,6 @@
 
 # set up net environment for 101.6.30.156
 
-# rename NICs
-ip link set dev eth3 name veth6
-ip link set dev eth4 name veth7
-
 # configure NICs
 ifconfig lo up
 ifconfig veth1 hw ether 000000000001

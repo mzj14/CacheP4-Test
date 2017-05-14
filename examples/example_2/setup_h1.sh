@@ -6,13 +6,9 @@
 ip netns add h11
 ip netns add h12
 
-# rename NICs
-ip link set dev em3 name veth11
-ip link set dev em4 name veth12
-
 # add veths to namespaces
 ip link set veth11 netns h11
-ip link set veth12 netns h12
+ip link set veth11 netns h11
 
 # configure NICs in namespaces
 ip netns exec h11 ifconfig lo up
