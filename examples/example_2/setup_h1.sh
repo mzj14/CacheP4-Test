@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# set up the net environment for 101.6.30.157
+# set up the net environment for 101.6.30.158
 
 # create namespaces
 ip netns add h11

@@ -330,6 +330,7 @@ table compound_table {
         ethernet.src_addr : exact;
         ipv4.src_addr : ternary;
         ipv4.dst_addr : ternary;
+        ipv4.ttl      : range;
         tcp.src_port  : ternary;
         tcp.dst_port  : ternary;
         tcp.flags     : ternary;
