@@ -26,8 +26,8 @@ ip netns exec h17 ethtool -K veth17 gro off
 ip netns exec h17 ifconfig veth17 192.168.0.12 up
 
 # configure arp for namespaces
-ip netns exec h16 arp -s 192.168.0.1 00:00:00:00:01:01
-ip netns exec h17 arp -s 192.168.0.1 00:00:00:00:01:02
+ip netns exec h16 arp -s 192.168.0.2 00:00:00:00:01:01
+ip netns exec h17 arp -s 192.168.0.2 00:00:00:00:01:02
 
 # configure default gateway for namespaces
 ip netns exec h16 route add default gw 192.168.0.1
