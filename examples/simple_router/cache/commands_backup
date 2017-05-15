@@ -1,0 +1,7 @@
+// the following table entry could cache flow between 10.0.0.11 and 10.0.1.11
+table_add compound_table compound_action 1->255 10.0.1.11/32 => 10.0.1.11 6 00:00:00:00:01:0b 00:00:00:00:01:01 100
+table_add compound_table compound_action 1->255 10.0.0.11/32 => 10.0.0.11 1 00:00:00:00:00:0b 00:00:00:00:00:01 100
+
+// the following table entry could cache flow between 10.0.0.12 and 10.0.1.12
+table_add compound_table compound_action 1->255 10.0.1.12/32 => 10.0.1.12 7 00:00:00:00:01:0c 00:00:00:00:01:02 100
+table_add compound_table compound_action 1->255 10.0.0.12/32 => 10.0.0.12 2 00:00:00:00:00:0c 00:00:00:00:00:02 100
