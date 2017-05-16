@@ -1,4 +1,4 @@
-// the following 2 table entries could cache flow from 10.0.0.11:port(port >= 9000) to 192.168.0.11:80
+// cache table entry that could match test flow
 
 table_add compound_table compound_action_int_to_ext 1 10.0.0.11&&&255.255.255.255 192.168.0.11&&&255.255.255.255 1->255 0x8000&&&0x8000 0x0050&&&0xffff => 10.0.0.1 00:00:00:00:00:01 0 192.168.0.2 192.168.0.11 6 00:00:00:00:01:0b 100
 table_add compound_table compound_action_int_to_ext 1 10.0.0.11&&&255.255.255.255 192.168.0.11&&&255.255.255.255 1->255 0x4000&&&0xc000 0x0050&&&0xffff => 10.0.0.1 00:00:00:00:00:01 0 192.168.0.2 192.168.0.11 6 00:00:00:00:01:0b 100
@@ -20,7 +20,7 @@ table_add compound_table compound_action_ext_to_int 6 192.168.0.11&&&255.255.255
 table_add compound_table compound_action_ext_to_int 6 192.168.0.11&&&255.255.255.255 192.168.0.2&&&255.255.255.255 1->255 0x0050&&&0xffff 0x2328&&&0xfff8 => 192.168.0.1 00:00:00:00:01:01 1 10.0.0.11 10.0.0.11 1 00:00:00:00:00:0b 100
 
 
-// the following 2 table entries could cache flow from 10.0.0.12:8000 to 192.168.0.12:80
+// cache table entry that could not match test flow
 table_add compound_table compound_action_int_to_ext 2 10.0.0.12&&&255.255.255.255 192.168.0.12&&&255.255.255.255 1->255 0x0000&&&0xe000 0x0050&&&0xffff => 10.0.0.1 00:00:00:00:00:02 0 192.168.0.2 192.168.0.12 7 00:00:00:00:01:0c 100
 table_add compound_table compound_action_int_to_ext 2 10.0.0.12&&&255.255.255.255 192.168.0.12&&&255.255.255.255 1->255 0x2000&&&0xfe00 0x0050&&&0xffff => 10.0.0.1 00:00:00:00:00:02 0 192.168.0.2 192.168.0.12 7 00:00:00:00:01:0c 100
 table_add compound_table compound_action_int_to_ext 2 10.0.0.12&&&255.255.255.255 192.168.0.12&&&255.255.255.255 1->255 0x2200&&&0xff00 0x0050&&&0xffff => 10.0.0.1 00:00:00:00:00:02 0 192.168.0.2 192.168.0.12 7 00:00:00:00:01:0c 100

@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# set up the net environment for 101.6.30.158
+# set up the net environment for host 1
 
 # create namespaces
 ip netns add h11
@@ -26,7 +26,9 @@ ip netns exec h12 ethtool -K veth12 gro off
 ip netns exec h12 ifconfig veth12 10.0.0.12 up
 
 # configure arp for namespaces
-ip netns exec h11 arp -s 10.0.1.11 00:00:00:00:01:0b
-ip netns exec h11 arp -s 10.0.1.12 00:00:00:00:01:0c
-ip netns exec h12 arp -s 10.0.1.11 00:00:00:00:01:0b
-ip netns exec h12 arp -s 10.0.1.12 00:00:00:00:01:0c
+ip netns exec h11 arp -s 10.0.0.1 00:00:00:00:00:01
+ip netns exec h12 arp -s 10.0.0.1 00:00:00:00:00:02
+
+# configure default gateway for namespaces
+ip netns exec h11 route add default gw 10.0.0.1
+ip netns exec h12 route add default gw 10.0.0.1
