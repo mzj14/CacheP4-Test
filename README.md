@@ -12,7 +12,7 @@ Examples for validating caching mechanism.
 
 ### Test results
 
-#### P1 Latency
+#### P1 RTT
 | times | origin (ms) | cache hit (ms) | cache miss (ms) |
 | :---: | :---: | :---: | :----: |
 | 1 | 0.914 | 0.891 | 0.929 |
@@ -29,7 +29,7 @@ Examples for validating caching mechanism.
 | 3 | 201 | 228 | 167 |
 | avg | 199(0.00%) | 225(+13.07%) | 167(-16.08%) |
 
-#### P2 Latency
+#### P2 RTT
 | times | origin (ms) | cache hit (ms) | cache miss (ms) |
 | :---: | :---: | :---: | :----: |
 | 1 | 1.220 | 1.000 | 1.253 |
@@ -45,7 +45,7 @@ Examples for validating caching mechanism.
 | 3 | 89.5 | 126 | 79.0 |
 | avg | 90.5(0.00%) | 124(+37.02%) | 78.3(-13.48%) |
 
-#### P3 Latency
+#### P3 RTT
 | times | origin (ms) | cache hit (ms) | cache miss (ms) |
 | :---: | :---: | :---: | :----: |
 | 1 | 1.355 | 1.059 | 1.435 |
