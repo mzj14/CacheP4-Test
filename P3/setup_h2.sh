@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# set up the net environment for 101.6.30.157
+# set up the net environment for host 2
 
 # create namespaces
 ip netns add h16
@@ -28,7 +28,3 @@ ip netns exec h17 ifconfig veth17 192.168.0.12 up
 # configure arp for namespaces
 ip netns exec h16 arp -s 192.168.0.2 00:00:00:00:01:01
 ip netns exec h17 arp -s 192.168.0.2 00:00:00:00:01:02
-
-# configure default gateway for namespaces
-ip netns exec h16 route add default gw 192.168.0.1
-ip netns exec h17 route add default gw 192.168.0.1
