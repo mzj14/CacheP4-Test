@@ -1,6 +1,6 @@
-### Introduction to P2
+### Introduction to C3
 
-A simple_nat program on https://github.com/p4lang/tutorials/tree/master/examples/simple_nat .
+A program combines source guard, acl, nat and router
 
 Network topology is shown in the following picture:
 

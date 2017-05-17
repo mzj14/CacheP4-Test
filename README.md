@@ -4,15 +4,15 @@ Examples for validating caching mechanism.
 
 
 ### Examples
-| Program | Features |
+| Test case | Features |
 | :---: | :---: |
-| P1  | router |
-| P2  | nat + router |
-| P3  | source guard + acl + nat + router |
+| C1  | router |
+| C2  | nat + router |
+| C3 | source guard + acl + nat + router |
 
 ### Test results
 
-#### P1 RTT
+#### C1 RTT
 | times | origin (ms) | cache hit (ms) | cache miss (ms) |
 | :---: | :---: | :---: | :----: |
 | 1 | 0.914 | 0.891 | 0.929 |
@@ -21,7 +21,7 @@ Examples for validating caching mechanism.
 | avg | 0.900(0.00%) | 0.886(-1.56%) | 0.933(+3.67%) |
 
 
-#### P1 Throughput
+#### C1 Throughput
 | times | origin (Mbps) | cache hit (Mbps) | cache miss (Mbps) |
 | :---: | :---: | :---: | :----: |
 | 1 | 201 | 224 | 172 |
@@ -29,7 +29,7 @@ Examples for validating caching mechanism.
 | 3 | 201 | 228 | 167 |
 | avg | 199(0.00%) | 225(+13.07%) | 167(-16.08%) |
 
-#### P2 RTT
+#### C2 RTT
 | times | origin (ms) | cache hit (ms) | cache miss (ms) |
 | :---: | :---: | :---: | :----: |
 | 1 | 1.220 | 1.000 | 1.253 |
@@ -37,7 +37,7 @@ Examples for validating caching mechanism.
 | 3 | 1.204 | 1.020 | 1.280 |
 | avg | 1.207(0.00%) | 1.012(-16.16%) | 1.258(+4.23%) |
 
-#### P2 Throughput
+#### C2 Throughput
 | times | origin (Mbps) | cache hit (Mbps) | cache miss (Mbps) |
 | :---: | :---: | :---: | :----: |
 | 1 | 90.1 | 120 | 77.8 |
@@ -45,7 +45,7 @@ Examples for validating caching mechanism.
 | 3 | 89.5 | 126 | 79.0 |
 | avg | 90.5(0.00%) | 124(+37.02%) | 78.3(-13.48%) |
 
-#### P3 RTT
+#### C3 RTT
 | times | origin (ms) | cache hit (ms) | cache miss (ms) |
 | :---: | :---: | :---: | :----: |
 | 1 | 1.355 | 1.059 | 1.435 |
@@ -53,7 +53,7 @@ Examples for validating caching mechanism.
 | 3 | 1.332 | 1.060 | 1.446 |
 | avg | 1.345(0.00%) | 1.062(-21.04%) | 1.434(+6.62%) |
 
-#### P3 Throughput
+#### C3 Throughput
 | times | origin (Mbps) | cache hit (Mbps) | cache miss (Mbps) |
 | :---: | :---: | :---: | :----: |
 | 1 | 66.9 | 110 | 57.3 |

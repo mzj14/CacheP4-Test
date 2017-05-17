@@ -1,4 +1,4 @@
-### Introduction to P1
+### Introduction to C1
 
 A simple_router program in https://github.com/p4lang/tutorials/blob/master/workshop_05_2016/ecmp/p4src/simple_router.p4 .
 
